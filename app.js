@@ -3,7 +3,13 @@ const app = express();
 const cors = require('cors');
 const controller = require('./controller');
 
-app.use(cors());
+app.use(cors(
+    {
+        origin:["https://psrvlog-frondend.vercel.app"],
+        methods:["POST","GET"],
+        credentials:true
+    }
+));
 
 app.use(
     express.urlencoded({
